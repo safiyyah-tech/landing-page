@@ -1,0 +1,137 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(214, 191, 191);
+}
+
+/*nav bar stylings*/
+
+#navbar{
+    background: rgb(177, 158, 158);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    /*to make the nav bar not scroll down (sticky)*/
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.logo{
+    float: left;
+    text-shadow: 5px 5px 15px rgb(189, 167, 167);
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#book{
+    list-style: none;
+    float: right;
+    padding: 10px;
+}
+
+#book li{
+    display: inline-block;
+}
+
+#book li a{
+    display: block;
+    padding: 4px 8px;
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+#book li a.selected{
+    background: orange;
+    color: white;
+    font-size: 23px;
+    padding: 0.8rem 0.6rem;
+}
+
+/*container stylings*/
+
+.header{
+    background-image: url(pictures/picNoOne.jpg) no-repeat;
+}
+
+#headerList li a{
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+
+/*For mobile view styling*/
+#headerList{
+    list-style: none;
+}
+
+#headerList li{
+    padding: 12px 0;
+}
+
+.box{
+    border: 2px solid rgb(207, 216, 219);
+    padding: 8px
+}
+
+/*For tablet screen view*/
+@media screen and (min-width: 901px){
+    .container{
+        display: grid;
+        grid-template-columns: repeat(8 1fr);
+        grid-template-areas: "hd hd hd hd hd hd hd hd" "sd sd sd sd sd main main main";
+        grid-gap: 10px;
+        border: 3px solid bisque;
+        padding: 10px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .header{
+        grid-area: hd;
+    }
+
+    .sidebar{
+        grid-area: sd;
+    }
+
+    .content{
+        grid-area: main;
+    }
+}
+
+/*For larger screen view*/
+@media (min-width: 901px){
+    .container{
+        grid-template-areas: "hd hd hd hd hd hd hd hd" "sd sd sd main main main main main";
+        border: 1px solid black;
+    }
+}
+
+.footer{
+    border-top: 1px solid #f1f1f1;
+    box-shadow: 0px -2px 3px #f1f1f1;
+    text-align: center;
+    padding: 2rem;
+}
+
+.moveUp{
+    position: fixed;
+    right: 0.7%;
+    bottom: 4%;
+    cursor: pointer;
+}
+
+.up-arrow{
+    width: 3rem;
+    height: 3rem;
+}
